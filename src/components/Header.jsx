@@ -1,4 +1,3 @@
-// import PropTypes from "prop-types";
 import Avatar from "@mui/material/Avatar";
 import { Head, Wrapper, Link } from "../style/Style";
 import { Stack, Typography } from "@mui/material";
@@ -24,17 +23,43 @@ export const Header = () => {
             LOGO
           </Typography>
         </NavLink>
+
         {auth ? (
           <Wrapper sx={{ justifyContent: "space-between" }}>
             <Wrapper sx={{ width: "fit-content" }}>
-              <Link to="/">Products</Link>
-              <Link to="/add">Add Product</Link>
-              <Link to="/profile">Profile</Link>
-            </Wrapper>
-            <Stack flexDirection="row" gap="20px">
-              <Typography
-                sx={{ textTransform: "capitalize", fontSize: "14px" }}
+              <NavLink
+                to="/"
+                style={({ isActive }) => ({
+                  color: isActive ? "#00AEAE" : "inherit", 
+                  textDecoration: "none",
+                  marginRight: "10px", 
+                })}
               >
+                Products
+              </NavLink>
+              <NavLink
+                to="/add"
+                style={({ isActive }) => ({
+                  color: isActive ? "#00AEAE" : "inherit",
+                  textDecoration: "none",
+                  marginRight: "10px",
+                })}
+              >
+                Add Product
+              </NavLink>
+              <NavLink
+                to="/profile"
+                style={({ isActive }) => ({
+                  color: isActive ? "#00AEAE" : "inherit",
+                  textDecoration: "none",
+                })}
+              >
+                Profile
+              </NavLink>
+            </Wrapper>
+
+            <Stack flexDirection="row" gap="20px">
+              <Typography sx={{ textTransform: "capitalize", fontSize: "14px" }}>
                 {JSON.parse(auth)?.name}
               </Typography>
               <Link onClick={logout} to="/register">
