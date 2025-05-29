@@ -16,13 +16,11 @@ export const Header = () => {
   return (
     <Head sx={{ justifyContent: "space-between" }}>
       <Wrapper pr={2}>
-        <NavLink to="/">
           <Typography
             style={{ background: "#00aeae", color: "#fff", padding: "10px" }}
           >
             LOGO
           </Typography>
-        </NavLink>
 
         {auth ? (
           <Wrapper sx={{ justifyContent: "space-between" }}>
