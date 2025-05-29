@@ -10,8 +10,6 @@ import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import CssBaseline from "@mui/material/CssBaseline";
 import { MainButton } from "../../style/Button";
-// import { ToastContainer, toast } from "react-toastify";
-// import "react-toastify/dist/ReactToastify.css";
 import IconButton from "@mui/material/IconButton";
 import Visibility from "@mui/icons-material/Visibility";
 import InputAdornment from "@mui/material/InputAdornment";
@@ -50,88 +48,6 @@ export const Register = () => {
     localStorage.setItem("token", JSON.stringify(result.auth));
     navigate("/");
   };
-
-  // const [showPassword, setShowPassword] = useState(false);
-  // const [formValues, setFormValues] = useState({
-  //   username: "",
-  //   fullname: "",
-  //   email: "",
-  //   password: "",
-  //   confirmpassword: "",
-  // });
-  // const [formErrors, setFormErrors] = useState({});
-  // const navigate = useNavigate();
-
-  // const handleClickShowPassword = () => setShowPassword((show) => !show);
-
-  // const handleChange = (e) => {
-  //   const { name, value } = e.target;
-  //   setFormValues({
-  //     ...formValues,
-  //     [name]: value,
-  //   });
-  // };
-
-  // const validate = () => {
-  //   const errors = {};
-  //   const passwordPattern = /^(?=.*[A-Z])(?=.*\d).+$/;
-
-  //   if (!formValues.username) errors.username = "Username is required";
-  //   if (!formValues.fullname) errors.fullname = "Full name is required";
-  //   if (!formValues.email) {
-  //     errors.email = "Email is required";
-  //   } else if (!/\S+@\S+\.\S+/.test(formValues.email)) {
-  //     errors.email = "Email address is invalid";
-  //   }
-  //   if (!formValues.password) {
-  //     errors.password = "Password is required";
-  //   } else if (!passwordPattern.test(formValues.password)) {
-  //     errors.password =
-  //       "Password must contain at least one number and one capital letter";
-  //   }
-  //   if (formValues.password !== formValues.confirmpassword) {
-  //     errors.confirmpassword = "Passwords do not match";
-  //   }
-  //   return errors;
-  // };
-
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   const errors = validate();
-  //   if (Object.keys(errors).length === 0) {
-  //     console.log({
-  //       email: formValues.email,
-  //       password: formValues.password,
-  //     });
-  //     handleDashboardClick();
-  //   } else {
-  //     setFormErrors(errors);
-  //   }
-  // };
-
-  // const handleDashboardClick = () => {
-  //   // Show the toast message
-  //   // toast("Registration successful!", {
-  //   //   // position: "bottom-right",
-  //   //   style: {
-  //   //     backgroundColor: "#defbde",
-  //   //   },
-  //   // });
-  //   // Navigate to the HomeDashboard
-  //   setTimeout(() => {
-  //     navigate("/homedashboard");
-  //   }, 1000);
-  // };
-
-  // const handleLoginClick = () => {
-  //   // Navigate to the login page
-  //   navigate("/");
-  // };
-
-  // const handleMouseDownPassword = (event) => {
-  //   event.preventDefault();
-  // };
-
 
   return (
     <Grid
@@ -246,12 +162,11 @@ export const Register = () => {
                 <Typography>Already have an account?</Typography>
               </Grid>
               <Grid item>
-                <Link href="#" variant="body2">
+                <Link href="login" variant="body2" sx={{ textDecoration: "none" }}>
                   {"login"}
                 </Link>
               </Grid>
             </Grid>
-            {/* <ToastContainer /> */}
           </Stack>
         </Box>
       </Grid>

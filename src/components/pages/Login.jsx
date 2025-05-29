@@ -174,8 +174,8 @@ const Login = () => {
                 <Typography>Already have an account?</Typography>
               </Grid>
               <Grid item>
-                <Link href="#" variant="body2">
-                  {"login"}
+                <Link href="register" variant="body2" sx={{textDecoration: "none"}}>
+                  {"register"}
                 </Link>
               </Grid>
             </Grid>
